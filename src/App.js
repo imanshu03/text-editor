@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import TextEditor from "./TextEditor";
+
+const config = {
+  bold: (text) => `<strong>${text}</strong>`,
+  red: (text) => `<span style="color: red">${text}</span>`,
+  green: (text) => `<span style="color: green">${text}</span>`,
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TextEditor config={config} />
     </div>
   );
 }
